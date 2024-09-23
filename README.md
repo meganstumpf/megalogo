@@ -9,7 +9,7 @@
     - [Installation](#installation)
     - [General Usage](#general-usage)
 
-* script: [megalogo.py](https://github.com/meganstumpf/megalogo/blob/main/code/megalogo.py)  
+* script: [megalogo.py](https://github.com/meganstumpf/megalogo/blob/master/code/megalogo.py)  
   
 
 
@@ -48,9 +48,16 @@ cd code
 For using the `megalogo.py` script, general use is as follows:  
 
 ```
-python3 megalogo.py --input wtDNA_filtered_df1_dedup.csv --sampleName wtDNA --annotConfig ../ref/annotations_config.csv --refAA ../ref/wildtype.csv --codonStartPos 1 --output output/wtDNA.png  
+python3 megalogo.py --input ../test_data/megalogo_test_data.csv --sampleName sample --annotConfig ../ref/annotations_config.csv --refAA ../ref/wildtype.csv --codonStartPos 1 --output ../outputs/sample.png  
 ```
 <br/>  
+
+Which can also be executed by running the following within the `code` directory:
+
+```
+./run_test_data.sh
+```
+
 For all possible arguments available, you can run the following:  
 
 ```
