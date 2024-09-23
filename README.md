@@ -52,11 +52,9 @@ python3 megalogo.py --input ../test_data/megalogo_test_data.csv --sampleName sam
 ```
 <br/>  
 
-Which can also be executed by running the following:
+Which can also be executed by running the following within the `code` directory:
 
 ```
-cd code
-
 ./run_test_data.sh
 ```
 
