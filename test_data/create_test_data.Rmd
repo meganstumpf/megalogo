@@ -1,0 +1,79 @@
+---
+title: "megalogo Test Data"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+# Create initial data frame to generate random ndet value
+setwd("~/dms_data")
+set.seed(0920)
+
+num_rows <- 389
+
+initial_data <- data.frame(
+  POSITION = 1:389,
+  NDET = sample(1:20, num_rows, replace = TRUE)  # Randomly sample amino acids
+)
+
+initial_data_sorted <- initial_data[order(initial_data$POSITION), ]
+
+head(initial_data_sorted)
+
+# Create empty data frame to hold next result 
+test_data <- data.frame()
+
+# Expand data frame based on NDET value
+for (i in 1:nrow(initial_data_sorted)) {
+  position <- initial_data_sorted$POSITION[i]
+  ndet_value <- initial_data_sorted$NDET[i]
+
+  # Temp data frame for current position and ndet
+  temp_data <- data.frame(
+    POSITION = rep(position, ndet_value), # Include position value
+    NDET = rep(ndet_value, ndet_value) # Include ndet value
+  )
+  
+  # Append to final data frame
+  test_data <- rbind(test_data, temp_data)
+}
+
+AA_all <- c("A", "R", "N", "D", "C", "E", "Q", "G", "H", "I", 
+            "L", "K", "M", "F", "P", "S", "T", "W", "Y", "V")
+
+# Assign random amino acids from AA_all without replacement for each position
+test_data$AA <- NA
+
+# Loop through each unique position to assign a unique amino acid
+unique_positions <- unique(test_data$POSITION)
+
+  for (pos in unique_positions) {
+    # Subset the rows
+    subset_rows <- test_data[test_data$POSITION == pos, ]
+    
+    # Randomly sample from AA_all without duplicating
+    sampled_aa <- sample(AA_all, nrow(subset_rows), replace = FALSE)
+    
+    # Assign sampled AAs to the AA column
+    test_data$AA[test_data$POSITION == pos] <- sampled_aa
+  }
+
+# Calculate frequency (height) of each AA at each position based on ndet value
+
+test_data$MERGE_FRAC <- 1/test_data$NDET
+
+head(test_data)
+
+write.csv(test_data, "megalogo_test_data.csv", row.names = FALSE)
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
