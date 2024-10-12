@@ -1,7 +1,14 @@
-# megalogo
+<div align = center>
+<img src="https://i.postimg.cc/50yrsgpH/megalogo-smaller.jpg" width=200px> <br>
+
+<h1>megaLogo</h1>
+
+![GitHub License](https://img.shields.io/github/license/meganstumpf/megalogo?style=flat)
+![GitHub Release Date](https://img.shields.io/github/release-date/meganstumpf/megalogo?style=flat)
+![GitHub Release](https://img.shields.io/github/v/release/meganstumpf/megalogo?style=flat)
+</div>
 
 ## Table of Contents
----------------------
 - [megalogo](#megalogo)
   - [Table of Contents](#table-of-contents)
     - [Introduction and Overview](#introduction-and-overview)
