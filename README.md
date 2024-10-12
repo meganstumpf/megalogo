@@ -24,6 +24,11 @@
 -----------------------------
 This repository contains code to create large logoplots for deep mutational scanning data with customizability. These plots visualize the absence/presence of amino acid mutations at all mutated codon positions above specified quality and count filters. Made in collaboration with [Tonya Brunetti](https://github.com/tbrunetti). 
 
+#### Example: 
+<div align = left>
+<img src = "https://github.com/meganstumpf/megalogo/blob/master/outputs/sample.png?raw=true" width = 400px>
+</div>
+
 
 ### Software Requirements and Dependencies
 ------------------------------------------  
