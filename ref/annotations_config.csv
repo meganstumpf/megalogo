@@ -1,0 +1,8 @@
+region_name,start,end,color
+Label A,1,64,blue
+Label B,65,79,yellow
+Label C,80,198,red
+Label D,199,236,green
+Label E,237,295,orange
+Label F,296,332,purple
+Label G,333,405,brown
