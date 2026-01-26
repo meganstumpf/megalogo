@@ -26,7 +26,7 @@ This repository contains code to create large logoplots for deep mutational scan
 
 #### Example: 
 <div align = left>
-<img src = "https://github.com/meganstumpf/megalogo/blob/master/outputs/sample.png?raw=true" width = 400px>
+<img src="https://raw.githubusercontent.com/meganstumpf/megalogo/main/outputs/sample.png" width="400">
 </div>
 
 
